@@ -1,0 +1,26 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Custom Angular Element TEST</title>
+
+  </head>
+  <body>
+
+    <counter-test  counter="5"></counter-test>
+    
+    <h2 style="text-align: center">Counter by Event:</h2><h2 id="result" style="text-align: center"></h2>
+    
+   
+
+    <script>
+        const counter = document.querySelector('counter-test');
+        const result = document.querySelector('#result');
+        counter.addEventListener('counterEmitter', (event)=> {
+            result.innerHTML = event.detail; 
+            //console.log(event);
+        });
+    </script>
+	 
+  </body>
+  <script src="counter-test.js"></script>
+</html>

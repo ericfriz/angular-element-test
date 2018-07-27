@@ -1,0 +1,7 @@
+@import '~bootstrap/dist/css/bootstrap.min.css';
+
+.double-element {
+    border: 1px solid #aaa;
+    padding: 10px;
+    text-align: center;
+}
