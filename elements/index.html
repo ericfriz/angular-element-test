@@ -1,26 +1,33 @@
 <!doctype html>
 <html lang="en">
   <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=11" />
     <title>Custom Angular Element TEST</title>
-
   </head>
   <body>
 
     <counter-test  counter="5"></counter-test>
-    
-    <h2 style="text-align: center">Counter by Event:</h2><h2 id="result" style="text-align: center"></h2>
-    
-   
 
-    <script>
+    <h2 style="text-align: center">Counter by Event:</h2><h2 id="result" style="text-align: center"></h2>
+
+<script>
         const counter = document.querySelector('counter-test');
         const result = document.querySelector('#result');
-        counter.addEventListener('counterEmitter', (event)=> {
-            result.innerHTML = event.detail; 
-            //console.log(event);
+       // In IE11 doesn't work
+        // counter.addEventListener('counterEmitter', (event)=> {
+       //     result.innerHTML = event.detail;
+       //     console.log(event);
+       // });
+
+        // This work in: IE11, Chrome and FireFox.
+         counter.addEventListener('counterEmitter', function (event) {
+            result.innerHTML = event.detail;
+            console.log(event);
         });
+
     </script>
-	 
+<script src="counter-test.js"></script>
   </body>
-  <script src="counter-test.js"></script>
+
 </html>
